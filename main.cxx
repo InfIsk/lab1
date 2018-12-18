@@ -1,17 +1,17 @@
-#include "PRICE.hpp"
+п»ї#include "PRICE.hpp"
 #include <cstdlib>
 
 const unsigned length = 8;
-//сортирвока по имени
+//СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ РёРјРµРЅРё
 int comparator(const void *f, const void *l){
 	return ((PRICE*)f)->_name() > ((PRICE*)l)->_name();
 }
 
-//счиытваем данные
+//СЃС‡РёС‚С‹РІР°РµРј РґР°РЅРЅС‹Рµ
 void scan(PRICE *p){
    for(unsigned i = 0; i < length; ++i){
 		try{
-			cout << "Имя Магазин Стоимость\n";
+			cout << "РРјСЏ РњР°РіР°Р·РёРЅ РЎС‚РѕРёРјРѕСЃС‚СЊ\n";
 			cin >> p[i];
 		}
 		catch(const EXCEPTION& exc){
@@ -22,9 +22,9 @@ void scan(PRICE *p){
    qsort(p, length, sizeof(PRICE), comparator);
 }
 
-//поиск
+//РїРѕРёСЃРє
 void find(PRICE *p){
-	cout << "Название товара\n";
+	cout << "РќР°Р·РІР°РЅРёРµ С‚РѕРІР°СЂР°\n";
 	string name;
 	cin >> name;
 	int i;
@@ -35,7 +35,7 @@ void find(PRICE *p){
 			flag = false;
 		}
 	}
-	if(flag) cout << "Отсутствует";
+	if(flag) cout << "РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚";
 	
 }
 int main(){
@@ -43,7 +43,7 @@ int main(){
 	PRICE p[length];
 	int a;
 	for(;;){
-		cout << "\n1. Считать\n2. Найти\n3. Выход\n";
+		cout << "\n1. РЎС‡РёС‚Р°С‚СЊ\n2. РќР°Р№С‚Рё\n3. Р’С‹С…РѕРґ\n";
 		cin >> a;
 		if(a == 1){
 			scan(p);
